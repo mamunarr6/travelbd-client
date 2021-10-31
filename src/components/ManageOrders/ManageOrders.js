@@ -12,7 +12,7 @@ const ManageOrders = () => {
 
     //load all orders
     useEffect(() => {
-        fetch(`http://localhost:5000/orders`)
+        fetch(`https://spooky-zombie-25747.herokuapp.com/orders`)
             .then(res => res.json())
             .then(result => {
                 setOrders(result)
@@ -20,7 +20,7 @@ const ManageOrders = () => {
     }, [email])
     //confirm update and load all orders
     if (order?.modifiedCount > 0) {
-        fetch(`http://localhost:5000/orders`)
+        fetch(`https://spooky-zombie-25747.herokuapp.com/orders`)
             .then(res => res.json())
             .then(result => setOrders(result))
     }
@@ -32,7 +32,7 @@ const ManageOrders = () => {
     const handleDelete = (id) => {
 
         if (window.confirm('Are sure to delete?')) {
-            fetch(`http://localhost:5000/deleteOrder/${id}`, {
+            fetch(`https://spooky-zombie-25747.herokuapp.com/deleteOrder/${id}`, {
                 method: "DELETE",
                 headers: { "content-type": "application/json" },
             })
@@ -52,7 +52,7 @@ const ManageOrders = () => {
     const handleStatus = e => {
         const order = orders.filter(odr => odr._id === e)
         //update single order
-        fetch(`http://localhost:5000/orders/update/${e}`, {
+        fetch(`https://spooky-zombie-25747.herokuapp.com/orders/update/${e}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

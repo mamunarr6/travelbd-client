@@ -1,26 +1,11 @@
 import React from 'react';
 
 const NotFound = () => {
-    const tour = [
-        {
-            title: "Sundarban",
-            day: "3",
-            description: "Sundarban is the largest mangrove forest on earth and a UNESCO World H...",
-            image: "https://i.ibb.co/dpdjWP3/sundarban.jpg",
-            price: 4000
-        },
-        {
-            title: "",
-            day: "",
-            description: "",
-            image: "",
-            price: 2
-        },
-
-    ]
     return (
         <div>
-            404
+            <div className="">
+                <img className="w-full" src="https://i.ibb.co/C9ZjMV9/404-error-page-not-found-Oops-connection-is-lost-Use-for-landing-page-template-web-app-poster-banner.jpg" alt="" />
+            </div>
         </div>
     );
 };

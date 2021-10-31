@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useLocation, useHistory } from 'react-router';
-import useAuth from '../../../hooks/useAuth';
+import useAuth from '../../hooks/useAuth';
 
 
 const Login = () => {
-    const { loginUsingGoogle, setUser, user, setIsLoading } = useAuth();
+    const { loginUsingGoogle, setUser, setIsLoading } = useAuth();
     const location = useLocation();
     const history = useHistory();
     const redirect_uri = location.state?.from || '/'
@@ -36,12 +36,6 @@ const Login = () => {
                             Continue with Google
                         </button>
                     </div>
-
-                    {/* register link */}
-                    <p className="flex justify-center items-center">
-                        Don't have an account?
-                        <Link to="/register" className="ml-2 bg-green-500 hover:bg-green-600 transition text-white border border-gray-400 px-2 py-1 rounded-full">Create</Link>
-                    </p>
                 </div>
             </div>
         </div>

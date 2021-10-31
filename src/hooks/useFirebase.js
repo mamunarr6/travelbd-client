@@ -41,7 +41,7 @@ const useFirebase = () => {
 
     //load all data of tour
     useEffect(() => {
-        fetch('http://localhost:5000/tour')
+        fetch('https://spooky-zombie-25747.herokuapp.com/tour')
             .then(res => res.json())
             .then(result => setTour(result))
     }, [])

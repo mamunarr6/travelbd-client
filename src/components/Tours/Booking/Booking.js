@@ -15,7 +15,7 @@ const Booking = () => {
     ======================== */
     const { id } = useParams();
     useEffect(() => {
-        fetch(`http://localhost:5000/tour/${id}`)
+        fetch(`https://spooky-zombie-25747.herokuapp.com/tour/${id}`)
             .then(res => res.json())
             .then(result => setTourDetails(result))
     }, [id])
@@ -28,7 +28,7 @@ const Booking = () => {
     const onSubmit = data => {
         data.order = tourDetails;
         data.status = 'pending';
-        fetch('http://localhost:5000/placeOrder', {
+        fetch('https://spooky-zombie-25747.herokuapp.com/placeOrder', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
