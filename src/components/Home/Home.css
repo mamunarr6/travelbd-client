@@ -1,0 +1,25 @@
+.banner{
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 700px;
+    background-size: cover;
+}
+.banner h2{
+    left: 38%;
+    bottom:30%
+}
+.banner h4{
+    left: 38%;
+    bottom: 25%;
+}
+.banner button{
+    left: 45%;
+    bottom: 15%;
+}
+.packeges{
+ background-image: linear-gradient(rgba(99, 102, 241, 0.8), rgba(99, 101, 241, 0.8)), url("https://i.ibb.co/qyQWZ0Q/sorishaful.png");
+ background-position: center;
+ background-repeat: no-repeat;
+ background-size: cover;
+ background-attachment: fixed;
+}
