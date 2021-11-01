@@ -1,14 +1,14 @@
 import React, { useEffect } from 'react';
-import { useState } from 'react/cjs/react.development';
+import { useState } from 'react';
 import useAuth from '../../hooks/useAuth';
+import { IoTrash } from "react-icons/io5";
+import { IoCheckmarkSharp } from "react-icons/io5";
 
 const ManageOrders = () => {
     const [orders, setOrders] = useState();
     const [order, setOrder] = useState();
     const { user } = useAuth();
-    // const [status, setStatus] = useState('pending');
     const email = user.email;
-    console.log('email', email)
 
     //load all orders
     useEffect(() => {
@@ -68,38 +68,48 @@ const ManageOrders = () => {
                 if (result.modifiedCount === 0) {
                     alert('already updated')
                 }
-                console.log(result)
             })
 
     }
     return (
         <div className="container mx-auto">
-            <h1 className="text-center text-4xl font-bold tracking-wide text-gray-700 py-8">MANAGE ALL ORDERS</h1>
-            <div className="grid grid-cols-12 gap-7">
-                {orders?.map(c => <div key={c._id} className="col-span-4 grid grid-cols-12  gap-5 border border-gray-400 rounded hover:bg-gray-200 transition-all my-10 h-52">
-                    <div className="col-span-5 h-52">
-                        <img className="w-full h-full rounded-l" src={c.order.image} alt="" />
+            <h1 className="text-center text-4xl font-bold tracking-wide text-gray-600 py-8">MANAGE ALL ORDERS : {orders?.length}</h1>
+
+
+            {orders?.map((order, index) => <div key={order._id} className="grid grid-cols-12 border-b-4 border-indigo-400 mb-4 pb-2">
+
+
+                <div className="bg-indigo-100 pt-5 pb-2 text-lg text-center font-medium col-span-12 md:col-span-1">
+                    <div>{index + 1}</div>
+                </div>
+                <div className="bg-indigo-100 pt-5 pb-2 text-lg text-center font-medium  col-span-12 md:col-span-3">
+                    <div>{order?.name}</div>
+                </div>
+                <div className="bg-indigo-100 pt-5 pb-2 text-lg text-center font-medium  col-span-12 md:col-span-3">
+                    <div>{order?.email}</div>
+                </div>
+                <div className="bg-indigo-100 pt-5 pb-2 text-lg text-center font-medium  col-span-12 md:col-span-3">
+                    <div>{order?.order.title}</div>
+                </div>
+                <div className="bg-indigo-100 pt-5 pb-2 text-lg text-center font-medium  col-span-12 md:col-span-2">
+                    <div className="gird grid-cols-12">
+                        <div className="col-span-6">
+                            {order?.status}
+                        </div>
+                        <div className="col-span-6">
+                            <button onClick={() => handleStatus(order._id)} className=" bg-green-500 ml-5 text-white py-2 px-3 rounded-xl hover:bg-green-600 mr-5"><IoCheckmarkSharp />
+                            </button>
+                            <button
+                                className="bg-red-500 text-white py-2 px-3 rounded-xl hover:bg-red-400" onClick={() => handleDelete(order._id)}><IoTrash />
+                            </button>
+                        </div>
                     </div>
+                </div>
 
-                    <div className="col-span-7 ">
-                        <h3 className="text-2xl font-bold text-gray-800">{c.order.title}</h3>
+            </div>)}
 
-                        <span className="font-medium">Tour: {c.order.day} Day</span>
-                        <span className="ml-5 font-medium">Cost: {c.order.price} BDT</span>
-                        <span className="ml-5 font-medium"> {c.status} </span>
-                        <br /><br />
 
-                        {/* status button */}
-                        <button onClick={() => handleStatus(c._id)} className="bg-indigo-500 text-white py-2 px-3 rounded-xl hover:bg-indigo-600 mr-5">Update
-                        </button>
-
-                        {/* delete button */}
-                        <button className="bg-indigo-500 text-white py-2 px-3 rounded-xl hover:bg-indigo-600" onClick={() => handleDelete(c._id)}>Delete
-                        </button>
-                    </div>
-                </div>)}
-            </div>
-        </div>
+        </div >
     );
 };
 

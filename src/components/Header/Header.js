@@ -23,7 +23,9 @@ const Header = () => {
                     }
                     {
                         user.email ?
-                            <Link onClick={logOut} className=" px-2 text-xl" to="/login">Logout</Link>
+                            <Link onClick={logOut} className=" px-2 text-xl" to="/login">
+                                Logout
+                            </Link>
                             :
                             <Link className=" px-2 text-xl" to="/login">Login</Link>
                     }

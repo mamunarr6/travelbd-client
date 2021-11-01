@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
-import { useState } from 'react/cjs/react.development';
+import { useState } from 'react';
 import useAuth from '../../hooks/useAuth';
 
 const MyOrders = () => {
     const [myOrders, setMyOrders] = useState();
-    const { user, setIsLoading } = useAuth();
+    const { user } = useAuth();
     const email = user.email;
 
     useEffect(() => {
@@ -32,7 +32,7 @@ const MyOrders = () => {
     };
     return (
         <div className="container mx-auto">
-            <h1 className="text-center text-4xl font-bold tracking-wide text-gray-700 py-8">MY ORDERS</h1>
+            <h1 className="text-center text-4xl font-bold tracking-wide text-gray-700 py-8">MY ORDERS : {myOrders?.length}</h1>
             <div className="container mx-auto grid lg:grid-cols-12 md:grid-cols-12 grid-cols-1 gap-2 lg:gap-6 max-w-xs lg:max-w-full md:max-w-4xl">
                 {myOrders?.map(c => <div key={c._id} className="col-span-4 md:col-span-6 grid grid-cols-12  gap-5 border border-gray-400 rounded hover:bg-gray-200 transition-all my-4 h-48">
                     <div className="col-span-5 h-48">

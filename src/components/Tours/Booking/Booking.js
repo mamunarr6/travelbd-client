@@ -76,7 +76,7 @@ const Booking = () => {
             <div className="container mx-auto">
                 <h2 className="text-center text-2xl font-bold text-gray-600">Please add the information to confirm the order.</h2>
                 <div className="flex justify-center my-10">
-                    <form className="w-2/4 rounded bg-gray-200 py-14 px-20" onSubmit={handleSubmit(onSubmit)}>
+                    <form className="lg:w-2/4 xl:h-2/5 w-4/5 rounded bg-gray-200 py-14 md:px-20 px-5" onSubmit={handleSubmit(onSubmit)}>
                         <input
                             className="block w-full my-4 py-4 outline-none px-3 rounded"
                             defaultValue={user.displayName} {...register("name")} />

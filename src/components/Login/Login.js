@@ -1,7 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { useLocation, useHistory } from 'react-router';
 import useAuth from '../../hooks/useAuth';
+
 
 
 const Login = () => {
@@ -24,7 +24,7 @@ const Login = () => {
     return (
         <div className="container mx-auto">
             <div className="flex justify-center my-10 font-mono">
-                <div className="h-96 w-2/5 bg-white border border-gray-300 p-20 rounded">
+                <div className="h-96 lg:w-2/4 xl:h-2/5 w-4/5 bg-white border border-gray-300 sm:p-20 px-5 py-20  rounded">
                     <h2 className=" text-gray-800 font-bold text-center text-3xl">Login With</h2>
 
                     {/* google login button */}

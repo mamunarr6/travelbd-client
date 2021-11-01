@@ -30,7 +30,7 @@ const AddTour = () => {
         <div className="container mx-auto">
             <h1 className="text-center font-extrabold text-4xl text-indigo-500 pt-10">Add a New Tour</h1>
             <div className="flex justify-center">
-                <form className="lg:w-2/4 xl:h-2/5 w-3/4 rounded bg-gray-200 py-14 px-20 my-10" onSubmit={handleSubmit(onSubmit)}>
+                <form className="lg:w-2/4 xl:h-2/5 w-3/4 rounded bg-gray-200 sm:py-14  sm:px-20 p-4 my-10" onSubmit={handleSubmit(onSubmit)}>
                     <input
                         className="block w-full my-4 py-4 outline-none px-3 rounded"
                         {...register("title", { required: true })} placeholder="Tour Title" />
