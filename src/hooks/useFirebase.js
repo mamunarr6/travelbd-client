@@ -11,7 +11,7 @@ const useFirebase = () => {
     const [isLoading, setIsLoading] = useState(true);
 
     const auth = getAuth();
-    const googlProvider = new GoogleAuthProvider();
+
 
     //observer
     useEffect(() => {
@@ -23,20 +23,24 @@ const useFirebase = () => {
             }
             setIsLoading(false)
         })
-        return () => unsubscribe()
+        return () => unsubscribe();
     }, [])
 
     const loginUsingGoogle = () => {
+        setIsLoading(true)
+        const googlProvider = new GoogleAuthProvider();
         return signInWithPopup(auth, googlProvider)
     }
 
     //Log out from website
     const logOut = () => {
+        setIsLoading(true)
         signOut(auth).then(() => {
             setUser({})
         }).catch((error) => {
             setError(error.message)
-        });
+        })
+            .finally(() => setIsLoading(false));
     }
 
     //load all data of tour

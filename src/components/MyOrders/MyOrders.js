@@ -4,7 +4,7 @@ import useAuth from '../../hooks/useAuth';
 
 const MyOrders = () => {
     const [myOrders, setMyOrders] = useState();
-    const { user } = useAuth();
+    const { user, setIsLoading } = useAuth();
     const email = user.email;
 
     useEffect(() => {
@@ -27,7 +27,7 @@ const MyOrders = () => {
                         const newOrder = myOrders.filter(c => c._id !== id)
                         setMyOrders(newOrder)
                     }
-                });
+                })
         }
     };
     return (
