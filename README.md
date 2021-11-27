@@ -1,6 +1,12 @@
 # This website for travellers
 
-## See the website [TravelBd] ('https://github.com/programming-hero-web-course1/tourism-or-delivery-website-server-side-mamunarr6')
+## See the website [TravelBd](https://travelbd-277db.web.app/)
+
+### Some information of this website
+* It is a traveling agency website for anyone who wants to travel with securely
+* Users can order and travel by selecting the place which place they can like
+* There have also highly trained tour guides to help users in their adventure
+* Finally , this agency only for travellers , who can travel alone or with freinds or family.
 
 ### The things of making releated if given below
 1.React.
@@ -8,13 +14,3 @@
 3.Firebase.
 4.Mongodb.
 5.Heroku.
-
-### Some information of this website
-1.This is an travel agency website
-2.Anyone can join with us by this website
-3.We have responsibility for those people who can travel with us
-4.Mainly we focus just on travel
-5.For this reason the travellers is secured with us
-6.Finally , this agency only for travellers , who can travel alone or with freinds or family.
-
-
